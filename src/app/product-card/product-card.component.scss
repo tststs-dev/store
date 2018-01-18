@@ -1,0 +1,74 @@
+.card {
+  height: 85%;
+  min-height: 435px;
+  width: 270px;
+  border-radius: 0;
+  margin: auto;
+}
+
+.card-img-top {
+  border: 1px solid #e1d8d8;
+  margin: -10px 0 0 10px;
+  height: 250px;
+  width: 250px;
+}
+
+.card-title {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  padding-left: 10px;
+  font-weight: 600;
+  text-align: left;
+  width: 85%;
+  overflow: hidden;
+  max-height: 40px;
+}
+
+.card-text {
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  padding-left: 10px;
+  opacity: 0.5;
+  text-align: left;
+  width: 85%;
+  float: left;
+  overflow: hidden;
+  max-height: 40px;
+}
+
+.price {
+  font-size: 22px;
+  font-family: Calibri, sans-serif;
+  padding-left: 10px;
+  font-weight: 600;
+  float: left;
+  margin-top: -10px;
+}
+
+button {
+  height: 37px;
+  width: 120px;
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+}
+
+.button-add {
+  background-color: white;
+  border: 1px solid #e1d8d8;
+  color: #e30505;
+  left: 10px;
+}
+
+.button-view {
+  background-color: #e1d8d8;
+  border: 1px solid #e1d8d8;
+  color: #bda7a7;
+  right: 10px;
+}
+
+
