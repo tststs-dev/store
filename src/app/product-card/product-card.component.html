@@ -1,31 +1,16 @@
-<!--<div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" style="height: 460px">
-  <div class="card">
-
-    <img class="card-img-top" src="../assets/img/1.png" alt="Card image cap">
-
-    <div class="card-body">
-      <h5 class="card-title">Lorem ipsum dolor sit amet</h5>
-      <p class="card-text">Lorem ipsum dolor sit amet,
-        consectetuer adipiscing elit.
-      </p>
-      <p class="price">$249.00</p>
-      <button class="button-add">ADD TO CART</button>
-      <button class="button-view">VIEW</button>
-    </div>
+<div class="card">
+  <img class="card-img-top" src="../assets/img/1.png">
+  <div class="card-img-overlay">
+    <img class="label-sale" src="../assets/icons/sale.png" *ngIf="product.discountCost">
+    <img class="label-new" src="../assets/icons/new.png" *ngIf="product.new">
   </div>
-</div>-->
-
-
-  <div class="card">
-
-    <img class="card-img-top" src="../assets/img/1.png" alt="Card image cap">
-
-    <div class="card-body">
-      <h5 class="card-title"> {{ product.title }} </h5>
-      <p class="card-text"> {{ product.description }} </p>
-      <p class="price"> {{ product.cost }}</p>
-      <button class="button-add">ADD TO CART</button>
-      <button class="button-view">VIEW</button>
-    </div>
+  <div class="card-body">
+    <h5 class="card-title"> {{ product.title }} </h5>
+    <p class="card-text"> {{ product.description }} </p>
+    <p class="price" *ngIf="product.discountCost"> ${{ product.discountCost }}.00</p>
+    <p class="price" [ngClass]="{ 'discount' : product.discountCost }"> ${{ product.cost }}.00</p>
+    <button class="button-add">ADD TO CART</button>
+    <button class="button-view">VIEW</button>
   </div>
+</div>
 

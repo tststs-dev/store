@@ -2,13 +2,14 @@
 <div class="container" *ngIf="loadedPage" [ngClass]="{ 'loader' : !loadedPage }">
 
   <!-- Product cards -->
-  <div class="row">
+  <div class="row" [@stagger] >
     <div
       class="col-sm-12 col-md-6 col-lg-4 col-xl-3"
       style="height: 460px"
       *ngFor="let product of products"
+      [@fade]
     >
-      <app-product-card [product]="product"></app-product-card>
+      <app-product-card [product]="product" ></app-product-card>
     </div>
   </div>
 
@@ -35,6 +36,5 @@
       <app-info-card></app-info-card>
     </div>
   </div>
-
 
 </div>

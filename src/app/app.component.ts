@@ -1,11 +1,25 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from './product.service';
 import { Product } from './product.interface';
+import {trigger, transition, style, animate, query, stagger, animateChild} from '@angular/animations';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  animations: [
+    trigger('fade', [
+      transition(':enter', [
+        style({opacity: 0}),
+        animate('2s ease')
+      ])
+    ]),
+    trigger('stagger', [
+      transition(':enter', [
+        query(':enter', stagger('.5s', [animateChild()]))
+      ])
+    ])
+  ]
 })
 export class AppComponent implements OnInit{
 
@@ -36,8 +50,8 @@ export class AppComponent implements OnInit{
             this.preloadProducts = res.entities;
             this.loadedData = true;
             console.log(this.loadedData);
-          /*  console.log("1111");
-            console.log(this.products);*/
+            /*  console.log("1111");
+              console.log(this.products);*/
           });
 
       });
@@ -54,6 +68,7 @@ export class AppComponent implements OnInit{
 
   loadMore() {
     this.loadedData = false;
+
     this.products = this.products.concat(this.preloadProducts);
     this.counter += 4;
     console.log(this.products);
