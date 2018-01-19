@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 
@@ -7,6 +8,9 @@ import { AppComponent } from './app.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 import { OfferCardComponent } from './offer-card/offer-card.component';
 import { InfoCardComponent } from './info-card/info-card.component';
+
+//services
+import { ProductService } from './product.service';
 
 
 @NgModule({
@@ -17,9 +21,12 @@ import { InfoCardComponent } from './info-card/info-card.component';
     InfoCardComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ProductService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

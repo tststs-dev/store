@@ -1,0 +1,78 @@
+.card {
+  height: 90%;
+  min-height: 330px;
+  border-radius: 0;
+  margin: auto;
+}
+
+.card-body {
+  padding-left: 24px;
+}
+
+.card-title {
+  padding-top: 26px;
+  font-size: 19px;
+  font-family: Arial, sans-serif;
+  font-weight: 600;
+  text-align: left;
+}
+
+.card-text {
+  width: 95%;
+  text-align: left;
+  font-size: 12px;
+  font-family: Arial, sans-serif;
+  opacity: 0.5;
+}
+
+img {
+  float: left;
+  padding-right: 8px;
+}
+
+.information {
+  height: 58px;
+  width: 95%;
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 989px) {
+
+  .card {
+    min-height: 588px;
+  }
+
+  .card-text {
+    text-align: center!important;
+  }
+
+  img {
+    display: block;
+    float: none!important;
+    margin: 0 auto!important;
+  }
+
+  .information {
+    height: 101px !important;
+    width: 95%!important;
+  }
+
+  .card-title {
+    font-size: 15px!important;
+  }
+
+  .skype-info {
+    padding-top: 39px;
+  }
+}
+
+@media screen and (min-width: 990px) and (max-width: 1199px) {
+  .card {
+    min-height: 465px;
+  }
+
+  .information {
+    height: 80px!important;
+    width: 95%!important;
+  }
+}
