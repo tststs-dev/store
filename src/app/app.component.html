@@ -1,27 +1,24 @@
-<div class="container">
+<div class="spinner" [hidden]="loadedPage"></div>
+<div class="container" *ngIf="loadedPage" [ngClass]="{ 'loader' : !loadedPage }">
 
   <!-- Product cards -->
   <div class="row">
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" style="height: 460px">
-      <app-product-card></app-product-card>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" style="height: 460px">
-      <app-product-card></app-product-card>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" style="height: 460px">
-      <app-product-card></app-product-card>
-    </div>
-    <div class="col-sm-12 col-md-6 col-lg-4 col-xl-3" style="height: 460px">
-      <app-product-card></app-product-card>
+    <div
+      class="col-sm-12 col-md-6 col-lg-4 col-xl-3"
+      style="height: 460px"
+      *ngFor="let product of products"
+    >
+      <app-product-card [product]="product"></app-product-card>
     </div>
   </div>
 
-
   <!-- Load more button -->
-  <div class="row" style="height: 80px">
+
+  <div class="row" style="height: 80px" [hidden]="counter >= total">
     <div class="col-3 col-sm-5"></div>
     <div class="col-6 col-sm-2">
-      <button class="button-load">LOAD MORE</button>
+      <div class="button-spinner" [hidden]="loadedData"></div>
+      <button class="button-load" (click)="loadMore()" [hidden]="!loadedData">LOAD MORE</button>
     </div>
     <div class="col-3 col-sm-5"></div>
   </div>
